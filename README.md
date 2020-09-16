@@ -65,6 +65,14 @@ Fake Chat приложение.
 
 Внутри класса Chats используем метод fetchChats() и  он обращается по созданному эндпойнту, в итоге удаленный сервер возвращает в качестве ответа на дефолтный метод GET объект с данными.
 
+```
+async fetchChats() {
+  const response = await fetch( `${this.urlData}` );
+  const responseData = await response.json();
+  return responseData;
+}
+```
+
 ### Как мы его ~~рисуем~~рендерим
 
 Для это мы написали класс ChatUI с методом paintChatList(), который принимает полученный объект и поэтапно рендерит список чатов.
